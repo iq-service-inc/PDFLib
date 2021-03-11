@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31025.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocWatermarkPDF", "DocWatermarkPDF\DocWatermarkPDF.csproj", "{D2EB325B-747F-4DE5-B249-155F67A42CDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocWatermarkDLL", "DocWatermarkDLL\DocWatermarkDLL.csproj", "{C36A1441-E2FA-4586-AED3-B0833348EBB7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D2EB325B-747F-4DE5-B249-155F67A42CDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2EB325B-747F-4DE5-B249-155F67A42CDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2EB325B-747F-4DE5-B249-155F67A42CDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2EB325B-747F-4DE5-B249-155F67A42CDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C36A1441-E2FA-4586-AED3-B0833348EBB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C36A1441-E2FA-4586-AED3-B0833348EBB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C36A1441-E2FA-4586-AED3-B0833348EBB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C36A1441-E2FA-4586-AED3-B0833348EBB7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E1E5D919-EB8F-4E54-81BD-CD9E7B296552}
+	EndGlobalSection
+EndGlobal
