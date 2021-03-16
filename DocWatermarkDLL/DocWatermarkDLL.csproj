@@ -48,6 +48,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base64.cs" />
+    <Compile Include="Password.cs" />
     <Compile Include="Wartemark.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

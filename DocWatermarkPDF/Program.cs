@@ -39,7 +39,12 @@ namespace DocWatermarkPDF
                 string watermark = "網智服務" + DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
                 string filename = "doc.pdf";
                 string outputName = "out.pdf";
+                //浮水印
                 DocWatermarkDLL.Wartemark.add(watermark, filename, outputName, a: 128, fontSize: 50, rotation: 180, pX: 0, pY: 0);
+                //加密
+                DocWatermarkDLL.Password.add("1234", filename, outputName);
+                //base64
+                string base64 = DocWatermarkDLL.Base64.output(outputName);
             }
         }
 
