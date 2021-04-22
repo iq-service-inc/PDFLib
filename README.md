@@ -1,20 +1,24 @@
 # DocWatermarkPDF
 
-³o­Ó±M®×¬O¥Î¨Ó´ú¸Õ¬O§_¯à²Å¦X¤å¥ó¯B¤ô¦L¥[À£»İ¨D¤§´ú¸Õ±M®×
+é€™å€‹å°ˆæ¡ˆæ˜¯ç”¨ä¾†æ¸¬è©¦æ˜¯å¦èƒ½ç¬¦åˆæ–‡ä»¶æµ®æ°´å°åŠ å£“éœ€æ±‚ä¹‹æ¸¬è©¦å°ˆæ¡ˆ
 
 
 ## System Requirement
 
-* .NET Framework 4.5 ¥H¤W
+* .NET Framework 4.5 ä»¥ä¸Š
 
 ## Project Info
 
 * DocWatermarkDLL -- Lib
-* DocWatermarkPDF -- ´ú¸Õ©I¥s
+* DocWatermarkPDF -- æ¸¬è©¦å‘¼å«
 
 ## Package Version
 
 * [PDFSharp 1.50.5147 MIT](http://www.pdfsharp.net/PDFsharp_License.ashx)
+
+## ä½¿ç”¨
+
+* è«‹åƒè€ƒ [æ–‡ä»¶æµ®æ°´å°å…ƒä»¶æ¸¬è©¦](http://10.190.173.136/DevelopmentSupport/DevelopmentSupportBoard/issues/22)
 
 ## UNLICENSED
 
