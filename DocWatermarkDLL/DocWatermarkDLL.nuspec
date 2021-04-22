@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <package>
   <metadata>
-    <id>DocWatermark</id>
-    <version>3.0.0</version>
-    <title>DocWatermark</title>
+    <id>DocWatermarkDLL</id>
+    <version>3.0.1</version>
+    <title>DocWatermarkDLL</title>
     <authors>DevTeam1</authors>
     <owners>DevTeam1</owners>
-    <licenseUrl>http://10.190.173.136/IQ-Support/DocWatermark</licenseUrl>
-    <projectUrl>http://10.190.173.136/IQ-Support/DocWatermark</projectUrl>
+    <licenseUrl>http://10.190.173.136/DevelopmentSupport/DocWatermarkPDF</licenseUrl>
+    <projectUrl>http://10.190.173.136/DevelopmentSupport/DocWatermarkPDF</projectUrl>
     <iconUrl>http://support6.iqs-t.com/img/frog.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>DocWatermark Library</description>
