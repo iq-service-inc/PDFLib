@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>DocWatermark</id>
+    <version>3.0.0</version>
+    <title>DocWatermark</title>
+    <authors>DevTeam1</authors>
+    <owners>DevTeam1</owners>
+    <licenseUrl>http://10.190.173.136/IQ-Support/DocWatermark</licenseUrl>
+    <projectUrl>http://10.190.173.136/IQ-Support/DocWatermark</projectUrl>
+    <iconUrl>http://support6.iqs-t.com/img/frog.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>DocWatermark Library</description>
+    <releaseNotes>v3.0.0</releaseNotes>
+    <copyright>Copyright © 2020 IQ Service International Corp. All rights reserved</copyright>
+    <tags>Support,Core,Watermark</tags>
+  </metadata>
+</package>
