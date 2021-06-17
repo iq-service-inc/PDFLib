@@ -15,6 +15,11 @@
 ## Package Version
 
 * [PDFSharp 1.50.5147 MIT](http://www.pdfsharp.net/PDFsharp_License.ashx)
+* [PDFSharp Sample](http://www.pdfsharp.net/wiki/PDFsharpSamples.ashx)
+
+## 包版
+
+* 由於有其他程式或api會使用，故需發佈nuget [參考S6上版流程 NUGET](http://10.190.173.136/IQ-Support/ProductBoard/issues/90)
 
 ## 使用
 
