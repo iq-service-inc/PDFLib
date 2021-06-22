@@ -11,6 +11,11 @@
 
 * DocWatermarkDLL -- Lib
 * DocWatermarkPDF -- 測試呼叫
+ 
+## 關係圖、流程圖
+
+![image](/uploads/63837aaea9592adf08bb6605fa0ce7cf/image.png)
+![image](/uploads/11dd2e19d0215c9873e4fbfdf7dca914/image.png)
 
 ## Package Version
 
