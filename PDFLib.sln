@@ -3,9 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31025.194
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocWatermarkPDF", "DocWatermarkPDF\DocWatermarkPDF.csproj", "{D2EB325B-747F-4DE5-B249-155F67A42CDF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDFLib", "PDFLib\PDFLib.csproj", "{C36A1441-E2FA-4586-AED3-B0833348EBB7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocWatermarkDLL", "DocWatermarkDLL\DocWatermarkDLL.csproj", "{C36A1441-E2FA-4586-AED3-B0833348EBB7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDFLibTests", "PDFLibTests\PDFLibTests.csproj", "{4EF63213-7AFC-46C0-B442-1E8A737908B5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{22AAF52F-AF8C-49D8-816B-22DADAF19221}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		CHANGELOG.md = CHANGELOG.md
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +20,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D2EB325B-747F-4DE5-B249-155F67A42CDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D2EB325B-747F-4DE5-B249-155F67A42CDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D2EB325B-747F-4DE5-B249-155F67A42CDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D2EB325B-747F-4DE5-B249-155F67A42CDF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C36A1441-E2FA-4586-AED3-B0833348EBB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C36A1441-E2FA-4586-AED3-B0833348EBB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C36A1441-E2FA-4586-AED3-B0833348EBB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C36A1441-E2FA-4586-AED3-B0833348EBB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EF63213-7AFC-46C0-B442-1E8A737908B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EF63213-7AFC-46C0-B442-1E8A737908B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EF63213-7AFC-46C0-B442-1E8A737908B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EF63213-7AFC-46C0-B442-1E8A737908B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

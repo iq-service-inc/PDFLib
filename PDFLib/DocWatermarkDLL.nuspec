@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <package>
   <metadata>
-    <id>DocWatermarkDLL</id>
+    <id>PDFLib</id>
     <version>1.0.0</version>
-    <title>DocWatermarkDLL</title>
+    <title>PDFLib</title>
     <authors>DevTeam1</authors>
     <owners>DevTeam1</owners>
     <licenseUrl>http://10.190.173.136/DevelopmentSupport/DocWatermarkPDF</licenseUrl>
