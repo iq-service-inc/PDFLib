@@ -17,9 +17,13 @@ PM> Install-Package PDFLib -Version 1.0.0
 
 ## Usage
 
-以下展示基本的使用範例，進階使用範例請參考文件
+以下展示基本的使用範例
 
 ### 加壓浮水印
+
+以下範例將對 `Input.pdf` PDF 加壓 `PDF的浮水印` 文字，並指定字型 `Noto Sans TC`，顏色為 `rgba(100,100,100,255)`，字體大小 `40px`，樣式 `Regular`， 水平垂直位置為 `(-100px,-100px)` 並旋轉 `45` 度，最後輸出到 `Output.pdf`
+
+#### 👨‍💻 Code
 
 ```csharp
 Wartemark wm = new Wartemark();
@@ -50,6 +54,25 @@ wm.Rotation = 45;
 // 浮水印文字 true 為加壓成功
 bool res = wm.Mark("PDF的浮水印");
 ```
+#### 💠 浮水印位置與旋轉示意圖
+
+以下說明 `PositionX` , `PositionY` 與 `Rotation` 參數的的效果關係
+
+![wm](http://10.190.173.136/uploads/-/system/temp/956d2afc87e8a6c4ac8a09023a27569d/image.png)
+
+#### ⚠️ 字型設置
+
+請注意 [PDFSharp](http://www.pdfsharp.net/) 中文部分，僅內建支援 `DFKai-SB` (標楷體)，其餘字型需要先在 Server Side 進行[安裝](https://support.microsoft.com/zh-tw/office/%E6%96%B0%E5%A2%9E%E5%AD%97%E5%9E%8B-b7c5f17c-4426-4b53-967f-455339c564c1) 並且只支援 [`otf`](https://zh.wikipedia.org/zh-tw/OpenType) 字型格式
+
+![Font](http://10.190.173.136/uploads/-/system/personal_snippet/86/0f69a9637ea9902cf80df1c88998a3f0/image.png)
+
+
+**字型名稱**，請確保輸入的是字型檔案打開後顯示的 `字型名稱`，才可被正確指定
+
+![FN](http://10.190.173.136/uploads/-/system/personal_snippet/86/c4bb924e425a241d2ccb18a1f3d8f6e8/image.png)
+
+> 如果需要擴充字型，可自行安裝，例如：[Google Fonts](https://fonts.google.com/)
+
 ### PDF 加上密碼
 
 ```csharp
@@ -59,6 +82,7 @@ PDFPassword pp = new PDFPassword("Output.pdf");
 var res = pp.ApplyPassword("123", "Pwd.pdf");
 ```
 
+![PWD](http://10.190.173.136/uploads/-/system/personal_snippet/86/2887d2cf05aad2eb721f66d2491ad602/image.png)
 
 ## 相關文件
 

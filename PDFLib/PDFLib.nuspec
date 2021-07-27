@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>PDFLib</id>
+    <version>1.0.0</version>
+    <title>PDFLib</title>
+    <authors>DevTeam1</authors>
+    <owners>DevTeam1</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>http://10.190.173.136/SideProject/PDFLib</licenseUrl>
+    <iconUrl>https://support6.iqs-t.com/img/pdflib.png</iconUrl>
+    <description>PDF Watermark Lib</description>
+    <releaseNotes>http://10.190.173.136/SideProject/PDFLib</releaseNotes>
+    <copyright>Copyright © 2021 IQ Service International Corp. All rights reserved</copyright>
+    <tags>PDF,Lib,Watermark</tags>
+  </metadata>
+</package>
