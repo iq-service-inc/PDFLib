@@ -21,9 +21,14 @@ namespace PDFLib
         public string OutputPath { get; set; }
 
         /// <summary>
+        /// 檔案輸出串流
+        /// </summary>
+        public Stream OutputStream { get; set; }
+
+        /// <summary>
         /// 文字字型
         /// </summary>
-        public string FontFamily { get; set; } = "Times New Roman";
+        public string FontFamily { get; set; } = "DFKai-SB";
         /// <summary>
         /// 字體大小
         /// </summary>
@@ -59,6 +64,11 @@ namespace PDFLib
         public ModelColor Color { get; set; } = new ModelColor();
 
         /// <summary>
+        /// 是否自動關閉串流，預設 fasle
+        /// </summary>
+        public bool CloseStream { get; set; }
+
+        /// <summary>
         /// 建構子
         /// </summary>
         /// <param name="input_path">檔案輸入路徑</param>
@@ -70,14 +80,27 @@ namespace PDFLib
             Color = new ModelColor();
         }
 
+
         /// <summary>
         /// 建構子
         /// </summary>
-        public Wartemark()
+        /// <param name="output_path">檔案輸出路徑</param>
+        public Wartemark(string output_path)
         {
+            OutputPath = output_path;
             Color = new ModelColor();
         }
 
+
+        /// <summary>
+        /// 建構子
+        /// </summary>
+        /// <param name="output_path">檔案輸出路徑</param>
+        public Wartemark(Stream output_stream)
+        {
+            OutputStream = output_stream;
+            Color = new ModelColor();
+        }
 
         /// <summary>
         /// 依照浮水印的參數設定加壓浮水印
@@ -87,16 +110,41 @@ namespace PDFLib
         public bool Mark(string words)
         {
             //判別檔案是否存在
-            if (!File.Exists(InputPath)) return false;
+            if (!File.Exists(InputPath))
+            {
+                ErrorMessage = "InputPath is not Exists";
+                return false;
+            }
+
+
+            // mode = 0 no output
+            // mode = 1 output to dist
+            // mode = 2 output to stream
+            int mode = 0;
+            if (OutputStream != null) mode = 2;
+            if (!string.IsNullOrWhiteSpace(OutputPath)) mode = 1;
+            if (mode == 0)
+            {
+                ErrorMessage = "Output setting is enpty";
+                return false;
+            }
+
+
 
             try
             {
-                //輸出目錄是否存在
-                string outputDir = Path.GetDirectoryName(OutputPath);
-                if (!string.IsNullOrEmpty(outputDir) && !Directory.Exists(outputDir)) Directory.CreateDirectory(outputDir);
-
-                //將原始檔案複製一份
-                File.Copy(InputPath, OutputPath, true);
+                if (mode == 1)
+                {
+                    //輸出目錄是否存在，不存在則直接結束
+                    string outputDir = Path.GetDirectoryName(OutputPath);
+                    if (!string.IsNullOrEmpty(outputDir) && !Directory.Exists(outputDir))
+                    {
+                        ErrorMessage = "Output folder is not exists";
+                        return false;
+                    }
+                    //將原始檔案複製一份
+                    //File.Copy(InputPath, OutputPath, true);
+                }
 
                 //無法讀取非ttf之字型，目前中文先只能使用標楷體。後面再試試ttc字型
                 //System.Drawing.Text.PrivateFontCollection pfcFonts = new System.Drawing.Text.PrivateFontCollection();
@@ -116,12 +164,11 @@ namespace PDFLib
                 var font = new XFont(FontFamily, FontSize, FontWeight);
 
                 //開啟文件
-                using (var document = PdfReader.Open(OutputPath))
+                using (var document = PdfReader.Open(InputPath))
                 {
 
                     //設定 version to PDF 1.4 (Acrobat 5)，因為有設定透明度.
                     if (document.Version < 14) document.Version = 14;
-
 
 
                     //將浮水印放至每頁
@@ -141,7 +188,7 @@ namespace PDFLib
                         XUnit height = page.Height;
 
                         // 計算加印位置
-                        var x = page.Width / 2 - size.Width/2 + PositionX; 
+                        var x = page.Width / 2 - size.Width / 2 + PositionX;
                         var y = page.Height / 2 - size.Height / 2 + PositionY;
 
 
@@ -159,8 +206,10 @@ namespace PDFLib
                         // 加壓至PDF頁面
                         gfx.DrawString(words, font, brush, new XPoint(x, y), format);
                     }
-                    // 儲存
-                    document.Save(OutputPath);
+
+                    if (mode == 1) document.Save(OutputPath);
+                    else document.Save(OutputStream, CloseStream);
+
                     // 測試時，開啟
                     //Process.Start(OutputPath);
                     document.Dispose();

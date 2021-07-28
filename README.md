@@ -26,11 +26,10 @@ PM> Install-Package PDFLib -Version 1.0.0
 #### 👨‍💻 Code
 
 ```csharp
-Wartemark wm = new Wartemark();
+// 輸出位置 (可為絕對路徑)
+Wartemark wm = new Wartemark("Output.pdf");
 // 輸入 PDF (可為絕對路徑)
 wm.InputPath = "Input.pdf";
-// 輸出位置 (可為絕對路徑)
-wm.OutputPath = "Output.pdf";
 // 指定浮水印字型
 wm.FontFamily = "Noto Sans TC";
 // 浮水印顏色
@@ -54,6 +53,36 @@ wm.Rotation = 45;
 // 浮水印文字 true 為加壓成功
 bool res = wm.Mark("PDF的浮水印");
 ```
+
+
+#### 使用串流輸出加壓浮水印的檔案
+
+將 PDF 檔案加壓浮水印之後，寫入記憶體串流中，進行後續處理
+
+```csharp
+// 建立記憶體串流
+using (MemoryStream mms = new MemoryStream())
+{
+    // 將記憶體串流輸入給浮水印
+    Wartemark wm = new Wartemark(mms);
+    // 設定 PDF 輸入檔案
+    wm.InputPath = "Input.pdf";
+    // 設定顯示字串，並加壓浮水印，如果為 true，則加壓好的浮水印就已經寫入在記憶體串流中
+    bool res = wm.Mark("PDF Memory Stream 的浮水印");
+
+    if (!res) Trace.WriteLine(wm.ErrorMessage);
+    else
+    {
+        // 將記憶體串流寫出到實體檔案 (非必要)
+        string output = "Output.pdf";
+        using (FileStream ms = new FileStream(output, FileMode.Create))
+        {
+            mms.CopyTo(ms);
+        }
+    }
+}
+```
+
 #### 💠 浮水印位置與旋轉示意圖
 
 以下說明 `PositionX` , `PositionY` 與 `Rotation` 參數的的效果關係
