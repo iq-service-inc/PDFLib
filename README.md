@@ -1,14 +1,16 @@
-# PDFLib
+# [PDFLib](https://www.nuget.org/packages/PDFLib)
 
 此專案基於 [PDFsharp](http://www.pdfsharp.net/) 函式庫進行擴充，簡化複雜的呼叫方式，用於處理 PDF 相關功能的函式庫，支援浮水印與密碼加密功能
 
 
 ## Installation
 
-**Package Manager (v1.0.0)**
+**Package Manager (v1.1.1)**
+
+NuGet：[PDFLib](https://www.nuget.org/packages/PDFLib)
 
 ```
-PM> Install-Package PDFLib -Version 1.0.0
+PM> Install-Package PDFLib -Version 1.1.1
 ```
 
 ## System Requirement
