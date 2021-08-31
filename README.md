@@ -1,6 +1,6 @@
 # PDFLib
 
-此專案基於 [DocWatermarkPDF](http://10.190.173.136/DevelopmentSupport/DocWatermarkPDF) 修改，專門用於處理 PDF 相關功能的函式庫，支援浮水印與密碼加密功能
+此專案基於 [PDFsharp](http://www.pdfsharp.net/) 函式庫進行擴充，簡化複雜的呼叫方式，用於處理 PDF 相關功能的函式庫，支援浮水印與密碼加密功能
 
 
 ## Installation
@@ -87,18 +87,18 @@ using (MemoryStream mms = new MemoryStream())
 
 以下說明 `PositionX` , `PositionY` 與 `Rotation` 參數的的效果關係
 
-![wm](http://10.190.173.136/uploads/-/system/temp/956d2afc87e8a6c4ac8a09023a27569d/image.png)
+![Imgur](https://i.imgur.com/XHSHUI6.png)
 
 #### ⚠️ 字型設置
 
 請注意 [PDFSharp](http://www.pdfsharp.net/) 中文部分，僅內建支援 `DFKai-SB` (標楷體)，其餘字型需要先在 Server Side 進行[安裝](https://support.microsoft.com/zh-tw/office/%E6%96%B0%E5%A2%9E%E5%AD%97%E5%9E%8B-b7c5f17c-4426-4b53-967f-455339c564c1) 並且只支援 [`otf`](https://zh.wikipedia.org/zh-tw/OpenType) 字型格式
 
-![Font](http://10.190.173.136/uploads/-/system/personal_snippet/86/0f69a9637ea9902cf80df1c88998a3f0/image.png)
+![Font](https://i.imgur.com/pr52JVQ.png)
 
 
 **字型名稱**，請確保輸入的是字型檔案打開後顯示的 `字型名稱`，才可被正確指定
 
-![FN](http://10.190.173.136/uploads/-/system/personal_snippet/86/c4bb924e425a241d2ccb18a1f3d8f6e8/image.png)
+![FN](https://i.imgur.com/QNTH6Oa.png)
 
 > 如果需要擴充字型，可自行安裝，例如：[Google Fonts](https://fonts.google.com/)
 
@@ -111,11 +111,8 @@ PDFPassword pp = new PDFPassword("Output.pdf");
 var res = pp.ApplyPassword("123", "Pwd.pdf");
 ```
 
-![PWD](http://10.190.173.136/uploads/-/system/personal_snippet/86/2887d2cf05aad2eb721f66d2491ad602/image.png)
+![PWD](https://i.imgur.com/Z90TD4g.png)
 
-## 相關文件
-
-[浮水印轉檔交接.txt](https://iqservice.sharepoint.com/:t:/s/DevSupport/ETsZPU30ntlPi0pISbvbDGkB5kVNL89SeQL2-OzMKBGlqQ?e=CzQ6QU)
 
 ## License MIT
 
