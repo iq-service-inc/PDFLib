@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>PDFLib</id>
-    <version>1.1.1</version>
+    <version>1.1.2</version>
     <title>PDFLib</title>
     <authors>DevTeam1</authors>
     <owners>DevTeam1</owners>
@@ -11,7 +11,7 @@
     <iconUrl>https://support6.iqs-t.com/img/pdflib.png</iconUrl>
     <description>PDF Watermark Lib</description>
     <releaseNotes>https://github.com/iq-service-inc/PDFLib</releaseNotes>
-    <copyright>Copyright © 2021 IQ Service International Corp. All rights reserved</copyright>
+    <copyright>Copyright © 2022 IQ Service International Corp. All rights reserved</copyright>
     <tags>PDF,Lib,Watermark</tags>
   </metadata>
 </package>
