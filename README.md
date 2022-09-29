@@ -5,17 +5,17 @@
 
 ## Installation
 
-**Package Manager (v1.1.2)**
+**Package Manager (v1.1.3)**
 
 NuGet：[PDFLib](https://www.nuget.org/packages/PDFLib)
 
 ```
-PM> Install-Package PDFLib -Version 1.1.2
+PM> Install-Package PDFLib -Version 1.1.3
 ```
 
 ## System Requirement
 
-* .NET Framework 4.5 以上
+* .NET Framework 4.7.2 以上
 
 ## Usage
 

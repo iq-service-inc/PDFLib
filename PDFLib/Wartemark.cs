@@ -164,7 +164,7 @@ namespace PDFLib
                 var font = new XFont(FontFamily, FontSize, FontWeight);
 
                 //開啟文件
-                using (var document = PdfReader.Open(InputPath,PdfDocumentOpenMode.Import))
+                using (var document = PdfReader.Open(InputPath,PdfDocumentOpenMode.Modify))
                 {
 
                     //設定 version to PDF 1.4 (Acrobat 5)，因為有設定透明度.

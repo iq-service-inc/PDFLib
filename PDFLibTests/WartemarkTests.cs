@@ -86,13 +86,13 @@ namespace PDFLib.Tests
             using (MemoryStream mms = new MemoryStream())
             {
                 Wartemark wm = new Wartemark(mms);
-                wm.InputPath = "Input.pdf";
-                bool res = wm.Mark("PDF Memory Stream 的浮水印");
+                wm.InputPath = "KM_windows_export.pdf"; 
+                bool res = wm.Mark("KM_windows_export 的浮水印");
 
                 if (!res) Trace.WriteLine(wm.ErrorMessage);
                 else
                 {
-                    string output = "Output3.pdf";
+                    string output = "KM_windows_export_output.pdf";
                     using (FileStream ms = new FileStream(output, FileMode.Create))
                     {
                         mms.CopyTo(ms);
