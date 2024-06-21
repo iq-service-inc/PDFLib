@@ -1,6 +1,7 @@
-﻿using PdfSharp.Pdf.IO;
-using System;
+﻿using System;
 using System.IO;
+using PdfSharp.Pdf.IO;
+using PdfSharp.Pdf.Security;
 
 namespace PDFLib
 {
@@ -59,18 +60,15 @@ namespace PDFLib
                 File.Copy(filename, this.output_path, true);
 
                 //開啟文件
-                using (var document = PdfReader.Open(this.output_path))
+                using (PdfSharp.Pdf.PdfDocument document = PdfReader.Open(this.output_path, PdfDocumentOpenMode.Modify))
                 {
                     //設置密碼
-                    var securitySettings = document.SecuritySettings;
-                    // PdfDocumentSecurityLevel.Encrypted128Bit. 
+                    PdfSecuritySettings securitySettings = document.SecuritySettings;
+                    //PdfDocumentSecurityLevel.Encrypted128Bit. 
                     securitySettings.UserPassword = password;
                     //securitySettings.OwnerPassword = "owner";
 
                     // Don't use 40 bit encryption unless needed for compatibility.
-                    //securitySettings.DocumentSecurityLevel = PdfDocumentSecurityLevel.Encrypted40Bit;
-
-                    securitySettings.PermitAccessibilityExtractContent = false;
                     securitySettings.PermitAnnotations = false;
                     securitySettings.PermitAssembleDocument = false;
                     securitySettings.PermitExtractContent = false;
@@ -94,3 +92,4 @@ namespace PDFLib
         }
     }
 }
+

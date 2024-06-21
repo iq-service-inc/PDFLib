@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.31025.194
+VisualStudioVersion = 16.0.33214.272
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDFLib", "PDFLib\PDFLib.csproj", "{C36A1441-E2FA-4586-AED3-B0833348EBB7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDFLib", "PDFLib\PDFLib.csproj", "{F392A7A1-558E-4853-B324-B524DEE5293E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDFLibTests", "PDFLibTests\PDFLibTests.csproj", "{4EF63213-7AFC-46C0-B442-1E8A737908B5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDFLibTests", "PDFLibTests\PDFLibTests.csproj", "{24AD8AE0-6809-448B-B48F-B244C04CB79E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{22AAF52F-AF8C-49D8-816B-22DADAF19221}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{26612A65-A3C8-4CAA-8AE5-0B6560848C2C}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
 		CHANGELOG.md = CHANGELOG.md
@@ -20,19 +20,19 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C36A1441-E2FA-4586-AED3-B0833348EBB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C36A1441-E2FA-4586-AED3-B0833348EBB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C36A1441-E2FA-4586-AED3-B0833348EBB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C36A1441-E2FA-4586-AED3-B0833348EBB7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4EF63213-7AFC-46C0-B442-1E8A737908B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4EF63213-7AFC-46C0-B442-1E8A737908B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4EF63213-7AFC-46C0-B442-1E8A737908B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4EF63213-7AFC-46C0-B442-1E8A737908B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F392A7A1-558E-4853-B324-B524DEE5293E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F392A7A1-558E-4853-B324-B524DEE5293E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F392A7A1-558E-4853-B324-B524DEE5293E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F392A7A1-558E-4853-B324-B524DEE5293E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24AD8AE0-6809-448B-B48F-B244C04CB79E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24AD8AE0-6809-448B-B48F-B244C04CB79E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24AD8AE0-6809-448B-B48F-B244C04CB79E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24AD8AE0-6809-448B-B48F-B244C04CB79E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {E1E5D919-EB8F-4E54-81BD-CD9E7B296552}
+		SolutionGuid = {138C7482-6AF6-4753-AE3F-D29C49B6B198}
 	EndGlobalSection
 EndGlobal
