@@ -29,7 +29,7 @@ namespace PDFLib
         /// <summary>
         /// 文字字型
         /// </summary>
-        public string FontFamily { get; set; } = "DFKai-SB";
+        public string FontFamily { get; set; } = "標楷體";
         /// <summary>
         /// 字體大小
         /// </summary>
@@ -161,7 +161,9 @@ namespace PDFLib
                 //System.Drawing.Text.PrivateFontCollection pfcFonts = new System.Drawing.Text.PrivateFontCollection();
                 //string strFontPath = @"C:\Users\demon\AppData\Local\Microsoft\Windows\Fonts\NotoSansTC-Regular.otf";
                 //pfcFonts.AddFontFile(strFontPath);
-                GlobalFontSettings.FontResolver = new CustomFontResolver();
+                CustomFontResolver customFontResolver = new CustomFontResolver();
+                GlobalFontSettings.FontResolver = customFontResolver;
+
                 XFont font = new XFont(FontFamily, FontSize, FontWeight);
 
                 //開啟文件
@@ -240,8 +242,6 @@ namespace PDFLib
             return reg1.IsMatch(str);
         }
         #endregion
-
-
     }
 }
 
