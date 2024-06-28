@@ -15,7 +15,7 @@ PM> Install-Package PDFLib -Version 1.1.2
 
 ## System Requirement
 
-* .NET Framework 4.5 以上
+* .NET Framework 4.7.2 以上
 
 ## Usage
 
@@ -93,7 +93,7 @@ using (MemoryStream mms = new MemoryStream())
 
 #### ⚠️ 字型設置
 
-請注意 [PDFSharp](http://www.pdfsharp.net/) 中文部分，僅內建支援 `DFKai-SB` (標楷體)，其餘字型需要先在 Server Side 進行[安裝](https://support.microsoft.com/zh-tw/office/%E6%96%B0%E5%A2%9E%E5%AD%97%E5%9E%8B-b7c5f17c-4426-4b53-967f-455339c564c1) 並且只支援 [`otf`](https://zh.wikipedia.org/zh-tw/OpenType) 字型格式
+請注意 [PDFSharp](http://www.pdfsharp.net/) 中文部分，僅內建支援 `標楷體`，其餘字型需要先在 Server Side 進行[安裝](https://support.microsoft.com/zh-tw/office/%E6%96%B0%E5%A2%9E%E5%AD%97%E5%9E%8B-b7c5f17c-4426-4b53-967f-455339c564c1) 並且只支援 [`otf`](https://zh.wikipedia.org/zh-tw/OpenType) 字型格式
 
 ![Font](https://i.imgur.com/pr52JVQ.png)
 
@@ -103,6 +103,8 @@ using (MemoryStream mms = new MemoryStream())
 ![FN](https://i.imgur.com/QNTH6Oa.png)
 
 > 如果需要擴充字型，可自行安裝，例如：[Google Fonts](https://fonts.google.com/)
+
+**如果未指定字體，將預設使用`標楷體`。若使用者指定的字體在系統中未安裝，則會輸出「找不到此字體」的錯誤訊息**
 
 ### PDF 加上密碼
 
@@ -127,4 +129,3 @@ var res = pp.ApplyPassword("123", "Pwd.pdf");
 ## PDFSharp License
 
 [PDFsharp_License](http://www.pdfsharp.net/PDFsharp_License.ashx)
- 
