@@ -5,12 +5,12 @@
 
 ## Installation
 
-**Package Manager (v1.1.2)**
+**Package Manager (v2.0.0)**
 
 NuGet：[PDFLib](https://www.nuget.org/packages/PDFLib)
 
 ```
-PM> Install-Package PDFLib -Version 1.1.2
+PM> Install-Package PDFLib -Version 2.0.0
 ```
 
 ## System Requirement
@@ -105,6 +105,7 @@ using (MemoryStream mms = new MemoryStream())
 > 如果需要擴充字型，可自行安裝，例如：[Google Fonts](https://fonts.google.com/)
 
 **如果未指定字體，將預設使用`標楷體`。若使用者指定的字體在系統中未安裝，則會輸出「找不到此字體」的錯誤訊息**
+![錯誤訊息](https://imgur.com/Xxq6X9W.png)
 
 ### PDF 加上密碼
 

@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>PDFLib</id>
-    <version>1.1.2-beta</version>
+    <version>2.0.0</version>
     <title>PDFLib</title>
     <authors>DevTeam1</authors>
     <owners>DevTeam1</owners>
@@ -14,4 +14,7 @@
     <copyright>Copyright © 2022 IQ Service International Corp. All rights reserved</copyright>
     <tags>PDF,Lib,Watermark</tags>
   </metadata>
+  <files>
+    <file src="font\DFKai-SB Regular.ttf" target="content\font\DFKai-SB Regular.ttf" />
+  </files>
 </package>

@@ -7,38 +7,70 @@ using System.IO;
 namespace PDFLib
 {
     /// <summary>
-    ///  自定義字體解析器，實現 IPdfSharp 的 IFontResolver 接口
+    /// 自定義字體解析器，實現 IPdfSharp 的 IFontResolver 接口
     /// </summary>
     public class CustomFontResolver : IFontResolver
     {
         // 存儲字體名稱和對應的文件路徑
         private readonly Dictionary<string, string> fontFamilies = new Dictionary<string, string>();
-        private readonly string fallbackFontPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "font", "DFKai-SB Regular.ttf");
         public string ErrorMessage { get; private set; }
+        private readonly string fallbackFontPath;
 
         /// <summary>
         /// 建構子
         /// </summary>
         public CustomFontResolver()
         {
+            string projectFontPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "font");
+            fallbackFontPath = Path.Combine(projectFontPath, "DFKai-SB Regular.ttf");
+
+            // 檢查並創建字體文件
+            EnsureFallbackFontExists();
+
             LoadFontsFromDirectory(@"C:\Windows\Fonts");
             LoadFontsFromDirectory(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), @"Microsoft\Windows\Fonts"));
 
             // 如果沒有找到任何系統字體，預設加載標楷體
             if (fontFamilies.Count == 0)
             {
-                if (File.Exists(fallbackFontPath))
-                {
-                    AddFont(fallbackFontPath);
-                }
-                else
-                {
-                    ErrorMessage = "No font files found in the system font directories and fallback font not found.";
-                }
+                AddFont(fallbackFontPath);
             }
-            else if (!fontFamilies.ContainsKey("標楷體") && File.Exists(fallbackFontPath))
+            else if (!fontFamilies.ContainsKey("標楷體"))
             {
                 AddFont(fallbackFontPath);
+            }
+        }
+
+        /// <summary>
+        /// 確保標楷體字體文件存在，如果不存在則創建
+        /// </summary>
+        private void EnsureFallbackFontExists()
+        {
+            if (!File.Exists(fallbackFontPath))
+            {
+                try
+                {
+                    System.Reflection.Assembly assembly = typeof(CustomFontResolver).Assembly;
+                    using (Stream stream = assembly.GetManifestResourceStream("PDFLib.font.DFKai-SB Regular.ttf"))
+                    {
+                        if (stream == null)
+                        {
+                            ErrorMessage = "Embedded font 'DFKai-SB Regular.ttf' not found.";
+                            return;
+                        }
+
+                        Directory.CreateDirectory(Path.GetDirectoryName(fallbackFontPath));
+
+                        using (FileStream fileStream = new FileStream(fallbackFontPath, FileMode.Create, FileAccess.Write))
+                        {
+                            stream.CopyTo(fileStream);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    ErrorMessage = $"Failed to create fallback font file. Error: {ex.Message}";
+                }
             }
         }
 
@@ -69,7 +101,7 @@ namespace PDFLib
         /// <summary>
         /// 添加字體到字典中
         /// </summary>
-        /// <param name="fontPath"></param>
+        /// <param name="fontPath">字體文件的路徑</param>
         private void AddFont(string fontPath)
         {
             try
@@ -103,10 +135,7 @@ namespace PDFLib
             {
                 return File.ReadAllBytes(fontPath);
             }
-            else if (faceName == "標楷體" && File.Exists(fallbackFontPath))
-            {
-                return File.ReadAllBytes(fallbackFontPath);
-            }
+
             ErrorMessage = $"Font '{faceName}' is not available.";
             return null;
         }
@@ -123,10 +152,6 @@ namespace PDFLib
             if (fontFamilies.ContainsKey(familyName))
             {
                 return new FontResolverInfo(familyName);
-            }
-            else if (familyName == "標楷體" && File.Exists(fallbackFontPath))
-            {
-                return new FontResolverInfo("標楷體");
             }
 
             ErrorMessage = $"Font family '{familyName}' not found.";

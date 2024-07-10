@@ -2,6 +2,14 @@
 
 改版紀錄
 
+## `2.0.0`
+
+1. 移除 PDFsharp-gdi 套件
+2. 移除 PDFsharp-MigraDoc-gdi 套件
+3. 安裝 PDFsharp套件 6.1.0
+4. 專案升級 由.NET Framework 4.5 → .NET Framework 4.7.2 
+5. 升級 PDFLib v1.1.2  → v2.0.0
+
 ## `1.1.2`
 
 1. 更新 PDFsharp-MigraDoc-gdi 1.50.5147 → 1.51.5185-beta
