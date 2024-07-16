@@ -29,7 +29,7 @@ PM> Install-Package PDFLib -Version 2.0.0
 
 ```csharp
 // 輸出位置 (可為絕對路徑)
-Wartemark wm = new Wartemark("Output.pdf");
+Watermark wm = new Watermark("Output.pdf");
 // 輸入 PDF (可為絕對路徑)
 wm.InputPath = "Input.pdf";
 // 指定浮水印字型
@@ -66,7 +66,7 @@ bool res = wm.Mark("PDF的浮水印");
 using (MemoryStream mms = new MemoryStream())
 {
     // 將記憶體串流輸入給浮水印
-    Wartemark wm = new Wartemark(mms);
+    Watermark wm = new Watermark(mms);
     // 設定 PDF 輸入檔案
     wm.InputPath = "Input.pdf";
     // 設定顯示字串，並加壓浮水印，如果為 true，則加壓好的浮水印就已經寫入在記憶體串流中
