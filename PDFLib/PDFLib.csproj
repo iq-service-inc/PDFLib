@@ -125,12 +125,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets" Condition="Exists('..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>此專案參考這部電腦上所缺少的 NuGet 套件。請啟用 NuGet 套件還原，以下載該套件。如需詳細資訊，請參閱 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的檔案是 {0}。</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets'))" />
-  </Target>
   <PropertyGroup>
     <PreBuildEvent>powershell -Command "$f=$null; $asm=$null;if(Test-Path '..\Properties\AssemblyInfo.cs'){$nuname=(Get-ChildItem ..\*.nuspec | Select -exp  Name);$f='..\'+$nuname;if(!(Test-Path $f)){echo 'Can not find: ..\..\Properties\AssemblyInfo.cs';return;}$asm='..\Properties\AssemblyInfo.cs';}if(Test-Path '..\..\Properties\AssemblyInfo.cs'){$nuname=(Get-ChildItem ..\..\*.nuspec | Select -exp  Name);$f='..\..\'+$nuname;if(!(Test-Path $f)){echo 'Can not find: ..\..\Properties\AssemblyInfo.cs';return;}$asm='..\..\Properties\AssemblyInfo.cs';}if($asm -eq $null) {echo 'Can not find: *.nuspec or AssemblyInfo.cs'; return;}$nu=(gc $f); $found = \"$nu\" -match 'version&gt;(.*)&lt;/version&gt;';$a=(gc $asm); if ($a -like '*AssemblyInformationalVersion*') { $r=( $a -replace 'AssemblyInformationalVersion\(.*\)', ('AssemblyInformationalVersion(\"'+ $matches[1] +'\")') );  $r | Out-File -encoding utf8 $asm } else { $out=('[assembly: AssemblyInformationalVersion(\"'+$matches[1]+'\")]').replace(\"`n\",\"\"); ($a + $out) | Out-File -encoding utf8 $asm;echo $out;}"</PreBuildEvent>
   </PropertyGroup>
