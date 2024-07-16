@@ -2,6 +2,10 @@
 
 改版紀錄
 
+## `2.0.1`
+
+1. 修改 PDFLib.csproj 移除Microsoft.Extensions.Logging.Abstractions.6.0.0套件缺失警訊
+
 ## `2.0.0`
 
 1. 移除 PDFsharp-gdi 套件
