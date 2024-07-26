@@ -163,9 +163,9 @@ namespace PDFLib
                 //pfcFonts.AddFontFile(strFontPath);
                 CustomFontResolver customFontResolver = new CustomFontResolver();
                 GlobalFontSettings.FontResolver = customFontResolver;
-
                 XFont font = new XFont(FontFamily, FontSize, FontWeight);
-
+                // 調用字型後，紀錄錯誤訊息
+                ErrorMessage = customFontResolver.ErrorMessage;
                 //開啟文件
                 using (PdfSharp.Pdf.PdfDocument document = PdfReader.Open(InputPath, PdfDocumentOpenMode.Modify))
                 {

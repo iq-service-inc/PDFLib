@@ -15,6 +15,7 @@ namespace PDFLib
         private readonly Dictionary<string, string> fontFamilies = new Dictionary<string, string>();
         public string ErrorMessage { get; private set; }
         private readonly string fallbackFontPath;
+        private const string fallbackFontFamily = "標楷體";
 
         /// <summary>
         /// 建構子
@@ -35,7 +36,7 @@ namespace PDFLib
             {
                 AddFont(fallbackFontPath);
             }
-            else if (!fontFamilies.ContainsKey("標楷體"))
+            else if (!fontFamilies.ContainsKey(fallbackFontFamily))
             {
                 AddFont(fallbackFontPath);
             }
@@ -136,8 +137,8 @@ namespace PDFLib
                 return File.ReadAllBytes(fontPath);
             }
 
-            ErrorMessage = $"Font '{faceName}' is not available.";
-            return null;
+            ErrorMessage = $"Font '{faceName}' is not available. Loading fallback font '{fallbackFontFamily}'.";
+            return File.ReadAllBytes(fallbackFontPath);
         }
 
         /// <summary>
@@ -154,8 +155,8 @@ namespace PDFLib
                 return new FontResolverInfo(familyName);
             }
 
-            ErrorMessage = $"Font family '{familyName}' not found.";
-            return null;
+            ErrorMessage = $"Font family '{familyName}' not found. Loading fallback font '{fallbackFontFamily}'.";
+            return new FontResolverInfo(fallbackFontFamily);
         }
     }
 }

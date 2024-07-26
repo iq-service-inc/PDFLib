@@ -47,8 +47,8 @@ namespace PDFLib.Tests
             // 浮水印文字 true 為加壓成功
             bool res = wm.Mark("PDF的浮水印");
 
-            if (!res) Trace.WriteLine(wm.ErrorMessage);
-            else Process.Start(wm.OutputPath);
+            Trace.WriteLine(wm.ErrorMessage);
+            if (res) Process.Start(wm.OutputPath);
 
             Assert.IsTrue(res);
 
@@ -61,6 +61,7 @@ namespace PDFLib.Tests
             FileStream ms = new FileStream(output, FileMode.Create);
             Watermark wm = new Watermark(ms)
             {
+                FontFamily = "標楷體",
                 InputPath = @"D:\網智\OneDrive - 網智服務國際股份有限公司\桌面\01-未成年法定代理人同意書1100720.pdf"
             };
 
@@ -68,8 +69,8 @@ namespace PDFLib.Tests
             bool res = wm.Mark("PDF Stream的浮水印");
 
 
-            if (!res) Trace.WriteLine(wm.ErrorMessage);
-            else
+            Trace.WriteLine(wm.ErrorMessage);
+            if (res)
             {
                 Process.Start(output);
                 ms.Dispose();
@@ -84,12 +85,13 @@ namespace PDFLib.Tests
             {
                 Watermark wm = new Watermark(mms)
                 {
+                    FontFamily = "標楷體",
                     InputPath = @"D:\網智\OneDrive - 網智服務國際股份有限公司\桌面\01-未成年法定代理人同意書1100720.pdf"
                 };
                 bool res = wm.Mark("PDF Memory Stream 的浮水印");
 
-                if (!res) Trace.WriteLine(wm.ErrorMessage);
-                else
+                Trace.WriteLine(wm.ErrorMessage);
+                if(res)
                 {
                     string output = @"D:\網智\OneDrive - 網智服務國際股份有限公司\桌面\Output4.pdf";
                     using (FileStream ms = new FileStream(output, FileMode.Create))
