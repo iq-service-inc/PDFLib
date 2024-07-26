@@ -5,12 +5,12 @@
 
 ## Installation
 
-**Package Manager (v2.0.0)**
+**Package Manager (v2.0.2)**
 
 NuGet：[PDFLib](https://www.nuget.org/packages/PDFLib)
 
 ```
-PM> Install-Package PDFLib -Version 2.0.0
+PM> Install-Package PDFLib -Version 2.0.2
 ```
 
 ## System Requirement
