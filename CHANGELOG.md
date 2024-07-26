@@ -2,6 +2,10 @@
 
 改版紀錄
 
+## `2.0.2`
+
+1. 修正PDFLib，若指定字型找不到則自動載入"標楷體"，並將錯誤訊息存入ErrorMessage中，提供使用者調閱錯誤訊息
+
 ## `2.0.1`
 
 1. 修改 PDFLib.csproj 移除Microsoft.Extensions.Logging.Abstractions.6.0.0套件缺失警訊
